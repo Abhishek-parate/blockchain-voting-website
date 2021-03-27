@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.contrib import messages
 
 
 def vote(request):
-    return render(request, 'voting/vote.html')
+    if request.user.is_authenticated:
+        return render(request, 'voting/vote.html')
+    else:
+        return redirect('/')
