@@ -12,10 +12,13 @@ def vote(request):
 
 
 def process(request, value):
-    if request.user.is_authenticated:
+    try:
         if Hash.objects.filter(voter=request.user.username).exists():
             messages.info(request, "Already Voted")
-            return redirect('voting/vote')
+            return redirect('/voting/vote')
+    except:
+        pass
+    if request.user.is_authenticated:
         try:
             prev = Hash.objects.all()[-1].new
         except:
@@ -24,6 +27,6 @@ def process(request, value):
         y = Hash(prev=prev, trans=x[1], new=x[0], voter=request.user.username)
         y.save()
         messages.info(request, 'Voted Sucessfully')
-        return redirect(request, 'voting/vote')
+        return redirect(request, '/voting/vote')
     else:
         return redirect('/')
