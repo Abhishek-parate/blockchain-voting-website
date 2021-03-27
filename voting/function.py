@@ -28,5 +28,5 @@ def getHash(vote, prev='6dd24e2f5bbd2c34edc78e6075d3dca41a9a8930679c7adb7fd1f368
     str6 = str(vote6)
 
     final_str = str1 + "," + str2 + "," + str3 + "," + str4 + "," + str5 + "," + str6
-    x = Block(prev, [final_str])
+    x = Block(prev, final_str)
     return [x.block_hash, x.transactions]

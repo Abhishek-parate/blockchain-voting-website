@@ -27,6 +27,11 @@ def process(request, value):
         y = Hash(prev=prev, trans=x[1], new=x[0], voter=request.user.username)
         y.save()
         messages.info(request, 'Voted Sucessfully')
-        return redirect(request, '/voting/vote')
+        return render(request, 'voting/vote.html')
     else:
         return redirect('/')
+
+
+def result(request):
+    context = {'arr': []}
+    return render(request, 'voting/results.html', context)

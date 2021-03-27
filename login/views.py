@@ -42,3 +42,11 @@ def register(request):
             return redirect('/register')
     else:
         return render(request, 'login/register.html')
+
+
+def logout(request):
+    if request.user.is_authenticated:
+        auth.logout(request)
+        messages.info(request, 'logged out sucessfully.')
+        return redirect('/logout')
+    return redirect('/')
