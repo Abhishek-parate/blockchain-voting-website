@@ -14,11 +14,12 @@
 <body>
     <nav class="navbar sticky-top navbar-light bg-primary ml-auto">
         <div class="container-fluid mx-auto">
-            <div class="zoom"><a href="ballad.html"><img src="{% static 'img/logo.png' %}" alt="Home" width="140px"></a></div>
+            <div class="zoom"><a href="ballad.html"><img src="{% static 'img/logo.png' %}" alt="Home" width="140px"></a>
+            </div>
             <div class="btn-group">
                 <a href="#" class="hbtn hb-fill-middle-bg hpill"
                     style="padding-top: 5px; margin-right: 10px; font-family: Leelawadee UI; font-weight: 500; margin-top: 5px;">Hi,
-                    username</a>
+                    {{ user.first_name }}</a>
                 <a href="#" class="hbtn hb-fill-middle-bg hpill"
                     style="padding-top: 5px; margin-right: 10px; font-family: Leelawadee UI; font-weight: 500; margin-top: 5px;">Logout</a>
             </div>
