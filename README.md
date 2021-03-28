@@ -7,5 +7,3 @@
 - Enter `python install -r requirements.txt` to install the required files.
 - Enter `python manage.py runserver` to run a server.
 - Open `localhost:8000` in your browser to use the website.
-
-The results page is not function becuase we didn'd had enough time to impliment it.
